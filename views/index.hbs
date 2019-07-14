@@ -24,10 +24,17 @@
 
     const message = document.getElementById('message');
     const picker = document.getElementById('file-picker');
-
+    const postid = document.getElementById('postid-picker');
+    
     document.getElementById('upload-form').addEventListener('submit', (e) => {
 
       message.innerText = '';
+
+      if(!postid.length) {
+        message.innerText = 'Please enter a Wordpress Post ID for this image';
+        e.preventDefault();
+        return false;
+      }
 
       if(!picker.files.length) {
         message.innerText = 'Please select an image to upload.';
