@@ -3,7 +3,7 @@
 <h2>Upload photos</h2>
 <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
    <div class="upload-container">
-    Wordpress Post ID: <input type="text" name="postid"></div>
+    Wordpress Post ID: <input id="wp-postid" type="text" name="postid" required></div>
     <hr>
     File To Upload: <input id="file-picker" type="file" name="image">
     <hr>
@@ -31,12 +31,6 @@
     document.getElementById('upload-form').addEventListener('submit', (e) => {
 
       message.innerText = '';
-
-      if(postid.value == "") {
-        message.innerText = 'Please enter a Wordpress Post ID for this image';
-        e.preventDefault();
-        return false;
-      }
 
       if(!picker.files.length) {
         message.innerText = 'Please select an image to upload.';
