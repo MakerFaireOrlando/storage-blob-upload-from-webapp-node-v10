@@ -55,9 +55,7 @@ router.post('/', uploadStrategy, async (req, res) => {
 
     res.render('success',
                 { message: 'File uploaded to Azure Blob storage.', 
-                  containerurl: ${containerURL},
-                  bloburl: ${blockBlobURL} 
-                },
+                  bloburl: '${blockBlobURL}' } 
               );   
 
   } catch (err) {
