@@ -2,11 +2,10 @@
 
 <h2>Upload photos</h2>
 <form id="upload-form" action="/upload" method="POST" enctype="multipart/form-data">
+  <h2>Enter Wordpress Post ID:</h2>
+  <div class="postid-container"><input id="postid-picker" type="text" name="postid"></div>  
   <h2>Select an image to upload:</h2>
-  <div class="upload-container">
-    <input id="file-picker" type="file" name="image">
-    <input id="postid-picker" type="text" name="postid">
-  </div>
+  <div class="upload-container"><input id="file-picker" type="file" name="image"></div>
   <div><input type="submit" value="Upload Image"></div>
 </form>
 
