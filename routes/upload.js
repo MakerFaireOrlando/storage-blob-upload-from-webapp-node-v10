@@ -53,7 +53,10 @@ router.post('/', uploadStrategy, async (req, res) => {
     await uploadStreamToBlockBlob(aborter, stream,
       blockBlobURL, uploadOptions.bufferSize, uploadOptions.maxBuffers);
 
-    res.render('success', { message: 'File uploaded to Azure Blob storage.' });   
+    res.render('success',
+                { message: 'File uploaded to Azure Blob storage.' },
+                { bloburl: 'blob url goes here'}
+              );   
 
   } catch (err) {
 
