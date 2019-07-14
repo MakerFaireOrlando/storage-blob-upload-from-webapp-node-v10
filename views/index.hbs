@@ -30,7 +30,7 @@
 
       message.innerText = '';
 
-      if(!postid.length) {
+      if(postid.length == 0) {
         message.innerText = 'Please enter a Wordpress Post ID for this image';
         e.preventDefault();
         return false;
